@@ -1,0 +1,601 @@
+/* =========================================================
+   auth.css - লগইন ও রেজিস্ট্রেশন পেজের স্টাইল
+   (style.css এর কালার ও হেডার এখানেও ব্যবহার হচ্ছে)
+   ========================================================= */
+
+.auth-main {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 30px 16px 56px;
+}
+
+/* রেজিস্ট্রেশন পেজের ফর্ম বড় হবে */
+.auth-main.wide {
+  max-width: 700px;
+}
+
+.auth-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 22px;
+}
+
+.auth-card h1 {
+  font-size: 1.55rem;
+  color: var(--primary);
+  margin: 0 0 4px;
+}
+
+.sub {
+  color: var(--muted);
+  margin: 0 0 20px;
+  font-size: .92rem;
+}
+
+/* ---------------- ফর্ম ---------------- */
+
+form {
+  display: grid;
+  gap: 18px;
+}
+
+.reg-form {
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 14px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.req {
+  color: var(--err);
+}
+
+input,
+select {
+  width: 100%;
+  height: 44px;
+  background: var(--field);
+  color: var(--text);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: .94rem;
+}
+
+input::placeholder {
+  color: var(--muted);
+  opacity: .7;
+}
+
+input[readonly] {
+  opacity: .8;
+}
+
+input:disabled,
+select:disabled {
+  opacity: .6;
+}
+
+.bad {
+  border-color: var(--err);
+}
+
+.good {
+  border-color: var(--ok);
+}
+
+.err {
+  font-size: .76rem;
+  color: var(--err);
+  margin-top: 4px;
+}
+
+.hint {
+  font-size: .76rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.hint.warn {
+  color: var(--warn);
+}
+
+/* পাসওয়ার্ডের চোখ বাটন */
+.pw {
+  position: relative;
+}
+
+.pw input {
+  padding-right: 44px;
+}
+
+.pw button {
+  position: absolute;
+  right: 4px;
+  top: 5px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* ---------------- লগইন ট্যাব ---------------- */
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tab {
+  height: 36px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab.on {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: .84rem;
+}
+
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 400;
+  margin: 0;
+  font-size: .86rem;
+}
+
+.check input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.auth-card a {
+  font-weight: 600;
+}
+
+.auth-card .btn {
+  height: 48px;
+  padding: 0 22px;
+}
+
+.btn[disabled] {
+  opacity: .7;
+  cursor: progress;
+}
+
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: .86rem;
+  margin: 18px 0 0;
+}
+
+/* ---------------- বার্তা বক্স ---------------- */
+
+.alert {
+  display: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: .85rem;
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.alert.show {
+  display: block;
+}
+
+.alert.okk {
+  background: transparent;
+  border: 1px solid var(--ok);
+  color: var(--ok);
+}
+
+/* ভুল হলে কার্ড কাঁপবে */
+.shake {
+  animation: shake .35s;
+}
+
+@keyframes shake {
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shake {
+    animation: none;
+  }
+}
+
+/* ---------------- রেজিস্ট্রেশন ---------------- */
+
+/* প্রগ্রেস বার হেডারের নিচে আটকে থাকবে */
+.progress-bar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 40;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 18px 8px;
+}
+
+.progress-in {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.track {
+  flex: 1;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: var(--primary);
+  border-radius: 99px;
+  transition: width .25s;
+}
+
+#pct {
+  font-size: .8rem;
+  color: var(--muted);
+  min-width: 80px;
+  text-align: right;
+}
+
+.notice {
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: .86rem;
+  margin-bottom: 22px;
+}
+
+.notice p {
+  margin: 0 0 5px;
+}
+
+.notice p:last-child {
+  margin: 0;
+}
+
+/* পাসওয়ার্ড শক্তি মাপার বার */
+.meter {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.meter i {
+  flex: 1;
+  height: 5px;
+  border-radius: 9px;
+  background: var(--track);
+}
+
+.meter i.on {
+  background: var(--c);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .84rem;
+  color: var(--muted);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.geo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+}
+
+.draft {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+  min-height: 1em;
+}
+
+/* জমা দেওয়ার পর সফল বার্তা */
+.done {
+  display: none;
+  text-align: center;
+}
+
+.done h2 {
+  color: var(--ok);
+  margin-bottom: 6px;
+}
+
+.done dl {
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  margin: 16px 0 0;
+}
+
+.done dt {
+  font-weight: 600;
+}
+
+.done dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+/* নিচের ছোট বার্তা (Toast) */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: .88rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+  z-index: 60;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 560px) {
+  .reg-form {
+    grid-template-columns: 1fr;
+  }
+
+  .geo {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 22px 14px;
+  }
+}
+
+
+/* =========================================================
+   লগইন ও রেজিস্ট্রেশন পেজের অ্যানিমেশন
+   (rise ও fadeDown কীফ্রেমস style.css এ আছে)
+   ========================================================= */
+
+/* পেজ খুললে কার্ড নিচ থেকে উঠে আসবে */
+.auth-card {
+  animation: rise .5s ease both;
+}
+
+/* ইনপুটে ক্লিক করলে বর্ডার ও হালকা আভা আসবে */
+input,
+select {
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--primary-soft);
+  outline: none;
+}
+
+input.bad:focus,
+select.bad:focus {
+  border-color: var(--err);
+  box-shadow: 0 0 0 3px rgba(194, 52, 47, .15);
+}
+
+/* এরর বার্তা ও উপরের বার্তা বক্স নেমে আসবে */
+.err:not(:empty) {
+  animation: fadeDown .25s ease;
+}
+
+.alert.show {
+  animation: fadeDown .3s ease;
+}
+
+/* লগইন ট্যাব বদলের সময় রঙ ধীরে বদলাবে */
+.tab {
+  transition: background .25s, color .25s;
+}
+
+.tab:not(.on):hover {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+/* চোখ বাটন ও লিংক */
+.pw button {
+  transition: color .2s, background .2s;
+}
+
+.pw button:hover {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.auth-card a {
+  transition: color .2s;
+}
+
+.auth-card a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* পাসওয়ার্ড শক্তির বার ধীরে রঙিন হবে */
+.meter i {
+  transition: background .3s;
+}
+
+/* রেজিস্ট্রেশন সফল হলে বার্তা ও সারাংশ উঠে আসবে */
+.done {
+  animation: rise .5s ease both;
+}
+
+.done h2 {
+  animation: rise .5s ease .1s both;
+}
+
+.done dl {
+  animation: rise .5s ease .25s both;
+}
+
+/* সাবমিট বাটন চাপার সময় (disabled) হালকা স্পন্দন */
+.btn[disabled] {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: .7;
+  }
+  50% {
+    opacity: .45;
+  }
+}
+
+/* অ্যানিমেশন কমাতে চাইলে বন্ধ */
+@media (prefers-reduced-motion: reduce) {
+  .auth-card,
+  .done,
+  .done h2,
+  .done dl,
+  .btn[disabled] {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   ড্যাশবোর্ড পেজ
+   ========================================================= */
+
+.auth-main.dash {
+  max-width: 720px;
+}
+
+.dash .auth-card {
+  margin-bottom: 18px;
+}
+
+.welcome h1 {
+  font-size: 1.7rem;
+}
+
+.dash-title {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.dash-title i {
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.info {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 10px 14px;
+}
+
+.info dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.info dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+@media (max-width: 520px) {
+  .info {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .info dd {
+    margin-bottom: 10px;
+  }
+}

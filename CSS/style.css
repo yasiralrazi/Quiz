@@ -1,0 +1,1226 @@
+/* =========================================================
+   সিরাত কুইজ অলিম্পিয়াড - মূল স্টাইল (সব পেজে ব্যবহার হবে)
+   কালার বদলাতে চাইলে শুধু নিচের :root এর কালারগুলো বদলান।
+   সব কালার লাইট (হালকা) রাখা হয়েছে।
+   ========================================================= */
+
+:root {
+  --bg: #f3f8f4;            /* পেজের হালকা সবুজ ব্যাকগ্রাউন্ড */
+  --bg-alt: #fbfdf9;        /* বিকল্প সেকশনের ব্যাকগ্রাউন্ড */
+  --panel: #ffffff;         /* কার্ডের ব্যাকগ্রাউন্ড */
+  --field: #f6faf7;         /* ইনপুট বক্সের ব্যাকগ্রাউন্ড */
+  --line: #d6e6db;          /* বর্ডার */
+  --text: #1e3a2f;          /* মূল লেখা */
+  --muted: #5f7a6d;         /* হালকা লেখা */
+
+  --primary: #23805a;       /* মূল সবুজ (বাটন, লিংক) */
+  --primary-dark: #1a6a49;  /* হোভার কালার */
+  --primary-soft: #e0f1e7;  /* হালকা সবুজ ট্যাগ */
+  --primary-ink: #ffffff;   /* সবুজের উপর লেখা */
+
+  --gold: #e0a93b;          /* সোনালি অ্যাকসেন্ট */
+  --gold-soft: #fdf1d6;
+  --gold-ink: #7a5410;
+
+  --warn-bg: #fff4dc;
+  --warn: #8a5a00;
+  --err: #c2342f;
+  --ok: #15803d;
+  --track: #dcebe2;
+
+  --header-h: 64px;         /* হেডারের উচ্চতা */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 10px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hind Siliguri", "Noto Sans Bengali", "Segoe UI", sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Noto Serif Bengali", "Hind Siliguri", serif;
+  line-height: 1.35;
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* ---------------- বাটন ---------------- */
+
+.btn {
+  display: inline-block;
+  border: 1.5px solid var(--primary);
+  background: var(--primary);
+  color: var(--primary-ink);
+  padding: 10px 22px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #3d2a00;
+}
+
+.btn-gold:hover {
+  background: #cf9828;
+  border-color: #cf9828;
+}
+
+.btn-small {
+  padding: 6px 18px;
+}
+
+/* ---------------- হেডার / নেভিগেশন বার ---------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-in {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-family: "Noto Serif Bengali", serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.logo i {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--gold-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* বড় স্ক্রিনে মেনু বাইরেই দেখা যাবে */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav a {
+  color: var(--text);
+  font-size: .92rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.nav a.btn {
+  color: var(--primary-ink);
+  margin-left: 6px;
+}
+
+.nav a.btn:hover {
+  background: var(--primary-dark);
+}
+
+/* হ্যামবার্গার বাটন - বড় স্ক্রিনে লুকানো */
+.menu-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* ছোট স্ক্রিনে (ট্যাবলেট/মোবাইল) মেনু ভিতরে চলে যাবে */
+@media (max-width: 960px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 18px 16px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 8px;
+  }
+
+  .nav a.btn {
+    margin: 8px 0 0;
+    padding: 10px;
+  }
+}
+
+/* ---------------- সেকশন ---------------- */
+
+.section {
+  padding: 64px 0;
+}
+
+.section.alt {
+  background: var(--bg-alt);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.9rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.title i {
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-right: 6px;
+}
+
+.lead {
+  text-align: center;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto 34px;
+}
+
+/* ---------------- হিরো (প্রথম অংশ) ---------------- */
+
+.hero {
+  background: linear-gradient(135deg, #e6f4ec 0%, #f8fbf2 55%, #fdf1d6 100%);
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-in {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.hero .tagline {
+  color: var(--gold-ink);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.hero p {
+  color: var(--text);
+  margin: 0 0 22px;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-art {
+  text-align: center;
+}
+
+.hero-art svg {
+  width: 100%;
+  max-width: 360px;
+}
+
+@media (max-width: 800px) {
+  .hero-in {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-art {
+    order: -1;
+  }
+
+  .hero-art svg {
+    max-width: 220px;
+  }
+}
+
+/* ---------------- টাইমলাইন ---------------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px 10px;
+  position: relative;
+}
+
+/* বড় স্ক্রিনে পেছনের সরু লাইন */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: var(--line);
+}
+
+.timeline li {
+  position: relative;
+  text-align: center;
+  font-size: .88rem;
+}
+
+.timeline .dot {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  border: 2px solid var(--panel);
+  box-shadow: 0 0 0 1px var(--line);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.timeline li:nth-child(even) .dot {
+  background: var(--gold-soft);
+  color: var(--gold-ink);
+}
+
+.timeline strong {
+  display: block;
+  line-height: 1.4;
+}
+
+.timeline span {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------- আমাদের লক্ষ্য ---------------- */
+
+.goal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.goal h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.goal p {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.video-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d4ecdf, #fdf1d6);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.play {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.play:hover {
+  background: var(--primary-dark);
+  color: var(--primary-ink);
+}
+
+.video-box small {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .goal {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- কার্ড ---------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.card .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- কাঠামো (গ্রুপ ও রাউন্ড) ---------------- */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card h3 i {
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.list li {
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: .94rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  border-radius: 99px;
+  padding: 1px 10px;
+  font-size: .78rem;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.badge.gold {
+  background: var(--gold-soft);
+  color: var(--gold-ink);
+}
+
+@media (max-width: 800px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- সিলেবাস ---------------- */
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: .94rem;
+  vertical-align: top;
+}
+
+th {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.syllabus-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ক্লিক করে খোলা যায় এমন বক্স (details) - জাভাস্ক্রিপ্ট লাগে না */
+details {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 16px;
+  margin-bottom: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 13px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details > div,
+details > ul {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+details ul {
+  padding-left: 20px;
+}
+
+.side-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.side-box p {
+  font-size: .9rem;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.dl-links {
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 800px) {
+  .syllabus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- পুরস্কার ---------------- */
+
+.prizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.prize {
+  background: var(--primary-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 14px;
+  text-align: center;
+}
+
+.prize.first {
+  background: var(--gold-soft);
+  border-color: #efd9a0;
+}
+
+.prize i {
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.prize h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.prize .amount {
+  display: inline-block;
+  background: var(--gold);
+  color: #3d2a00;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 2px 14px;
+  margin-bottom: 8px;
+}
+
+.prize p {
+  margin: 0;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .prizes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------- অনুদান ব্যানার ---------------- */
+
+.donate {
+  background: linear-gradient(135deg, #dff0e6, #fdf1d6);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.donate h2 {
+  color: var(--primary);
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.donate p {
+  max-width: 640px;
+  margin: 0 auto 18px;
+  color: var(--text);
+}
+
+/* ---------------- গ্যালারি ---------------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* আসল ছবি দিলে এই বক্সের জায়গায় <img> ব্যবহার করুন */
+.photo {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, #d9eee2, #fdf1d6);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------- মন্তব্য ---------------- */
+
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.quote {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+}
+
+.quote .avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  border: 3px solid var(--gold-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.quote p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.quote strong {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .quotes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- FAQ ---------------- */
+
+.faq {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------------- যোগাযোগ ও ফুটার ---------------- */
+
+.contact {
+  background: var(--primary-soft);
+  border-top: 1px solid var(--line);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--primary);
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.contact p {
+  max-width: 640px;
+  margin: 0 auto 18px;
+}
+
+.footer {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+  text-align: center;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.footer .social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   অ্যানিমেশন (শুধু CSS দিয়ে - HTML/JS বদলাতে হয়নি)
+   ========================================================= */
+
+/* ---------- কীফ্রেমস (অ্যানিমেশনের ধাপ) ---------- */
+
+/* নিচ থেকে হালকা উপরে উঠে আসা */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* উপর থেকে নিচে নেমে আসা (মেনু, খোলা বক্স) */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ধীরে ধীরে উপর-নিচ ভাসা */
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+/* তারা মিটমিট করা */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .25;
+  }
+}
+
+/* চাঁদের আলোর স্পন্দন */
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(224, 169, 59, .3));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(224, 169, 59, .85));
+  }
+}
+
+/* প্লে বাটনের চারপাশে ঢেউ */
+@keyframes ring {
+  from {
+    opacity: .6;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 1.8;
+  }
+}
+
+/* ট্রফি/মেডেল একটু লাফানো */
+@keyframes hop {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  40% {
+    translate: 0 -8px;
+  }
+  70% {
+    translate: 0 -2px;
+  }
+}
+
+/* ---------- হিরো: পেজ খুললে একবার ধাপে ধাপে আসবে ---------- */
+
+.hero h1 {
+  animation: rise .7s ease both;
+}
+
+.hero .tagline {
+  animation: rise .7s ease .12s both;
+}
+
+.hero p:not(.tagline) {
+  animation: rise .7s ease .24s both;
+}
+
+.hero-btns {
+  animation: rise .7s ease .36s both;
+}
+
+.hero-art svg {
+  animation: rise .9s ease .2s both, float 6s ease-in-out 1.2s infinite;
+}
+
+/* চাঁদ ও তারার অ্যানিমেশন (SVG এর ভিতরের circle) */
+.hero-art circle:nth-of-type(1) {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.hero-art circle:nth-of-type(3) {
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+.hero-art circle:nth-of-type(4) {
+  animation: twinkle 3.1s ease-in-out .8s infinite;
+}
+
+.hero-art circle:nth-of-type(5) {
+  animation: twinkle 2.8s ease-in-out 1.4s infinite;
+}
+
+/* ---------- বাটন, লিংক, কার্ড: হোভার ইফেক্ট ---------- */
+
+.btn {
+  transition: background .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(35, 128, 90, .22);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 6px 14px rgba(224, 169, 59, .35);
+}
+
+.logo i {
+  transition: rotate .5s ease;
+}
+
+.logo:hover i {
+  rotate: 360deg;
+}
+
+.nav a {
+  transition: background .2s, color .2s;
+}
+
+.card,
+.prize,
+.quote,
+.list li {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover,
+.prize:hover,
+.quote:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(30, 58, 47, .09);
+  border-color: #b9d9c6;
+}
+
+.list li:hover {
+  transform: translateX(5px);
+  border-color: #b9d9c6;
+}
+
+.card .icon {
+  transition: background .25s, color .25s, scale .25s;
+}
+
+.card:hover .icon {
+  background: var(--primary);
+  color: var(--primary-ink);
+  scale: 1.1;
+}
+
+.prize:hover i {
+  animation: hop .7s ease;
+}
+
+.timeline .dot {
+  transition: scale .25s ease, box-shadow .25s ease;
+}
+
+.timeline li:hover .dot {
+  scale: 1.12;
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+/* ---------- প্লে বাটন: ঢেউ ---------- */
+
+.play {
+  position: relative;
+  transition: background .2s, scale .2s;
+}
+
+.play:hover {
+  scale: 1.08;
+}
+
+.play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  animation: ring 2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ---------- গ্যালারি: হোভারে জুম ---------- */
+
+.photo {
+  overflow: hidden;
+  transition: scale .3s ease, box-shadow .3s ease;
+}
+
+.photo i {
+  transition: scale .3s ease;
+}
+
+.photo:hover {
+  scale: 1.03;
+  box-shadow: 0 10px 20px rgba(30, 58, 47, .12);
+}
+
+.photo:hover i {
+  scale: 1.25;
+}
+
+.gallery img {
+  transition: scale .3s ease;
+}
+
+.gallery img:hover {
+  scale: 1.03;
+}
+
+/* ---------- ক্লিক করে খোলা বক্স (FAQ ও সিলেবাস) ---------- */
+
+details {
+  transition: border-color .2s, box-shadow .2s;
+}
+
+details:hover {
+  border-color: #b9d9c6;
+}
+
+details[open] {
+  border-color: var(--primary);
+  box-shadow: 0 6px 16px rgba(30, 58, 47, .07);
+}
+
+summary::after {
+  transition: rotate .25s ease;
+}
+
+details[open] > div,
+details[open] > ul {
+  animation: fadeDown .3s ease;
+}
+
+/* ---------- মোবাইল মেনু খোলার সময় নেমে আসবে ---------- */
+
+@media (max-width: 960px) {
+  .nav.open {
+    animation: fadeDown .25s ease;
+  }
+
+  .menu-btn {
+    transition: background .2s;
+  }
+
+  .menu-btn:hover {
+    background: var(--primary-soft);
+  }
+}
+
+/* ---------- স্ক্রল করলে ধীরে ধীরে ফুটে উঠবে ----------
+   (শুধু নতুন ব্রাউজারে চলে, পুরনো ব্রাউজারে সরাসরি দেখাবে - কোনো সমস্যা নেই) */
+
+@supports (animation-timeline: view()) {
+  .title,
+  .lead,
+  .timeline li,
+  .goal > *,
+  .cards .card,
+  .two-col .card,
+  .prize,
+  .gallery .photo,
+  .quote,
+  .faq details,
+  .syllabus-grid > *,
+  .table-wrap,
+  .donate .container,
+  .contact .container {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+/* ---------- যারা অ্যানিমেশন কমাতে চায় তাদের জন্য সব বন্ধ ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* hidden লেখা এলিমেন্ট সবসময় লুকানো থাকবে
+   (form, grid ইত্যাদির display এর কারণে যেন ভেঙে না যায়) */
+[hidden] {
+  display: none !important;
+}
