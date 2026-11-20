@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ড্যাশবোর্ড - সিরাত কুইজ অলিম্পিয়াড</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/auth.css">
+</head>
+<body>
+
+  <!-- হেডার (হোম পেজের মতোই) -->
+  <header class="site-header">
+    <div class="header-in">
+      <a class="logo" href="index.html">
+        <i class="fa-solid fa-moon"></i>
+        <span>সিরাত কুইজ অলিম্পিয়াড</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="মেনু খুলুন" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html">হোম</a>
+        <a href="index.html#schedule">শিডিউল</a>
+        <a href="index.html#syllabus">সিলেবাস</a>
+        <a href="index.html#prizes">পুরস্কার</a>
+        <a href="index.html#faq">জিজ্ঞাসা</a>
+        <a href="index.html#contact">যোগাযোগ</a>
+        <a class="btn btn-small" href="#" id="logoutBtn">লগআউট</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main dash">
+
+    <!-- তথ্য আসার আগে এটা দেখাবে -->
+    <div class="auth-card" id="loading">
+      <p class="sub" style="margin:0">তথ্য লোড হচ্ছে…</p>
+    </div>
+
+    <!-- তথ্য এলে এই অংশ দেখাবে -->
+    <div id="content" hidden>
+
+      <div class="auth-card welcome">
+        <p class="sub" style="margin:0 0 4px">আসসালামু আলাইকুম</p>
+        <h1 id="welcomeName"></h1>
+        <p class="sub" style="margin:6px 0 0">ক্যান্ডিডেট আইডি: <strong id="cidText"></strong></p>
+      </div>
+
+      <div class="auth-card">
+        <h2 class="dash-title"><i class="fa-solid fa-id-card"></i> আপনার তথ্য</h2>
+        <dl class="info" id="info"></dl>
+      </div>
+
+      <div class="auth-card">
+        <h2 class="dash-title"><i class="fa-regular fa-calendar"></i> পরীক্ষার আপডেট</h2>
+        <p class="sub" style="margin:0">
+          পরীক্ষা শুরুর সময় হলে এখানে “পরীক্ষা শুরু করুন” বাটন আসবে।
+          তারিখ জানতে <a href="index.html#schedule">শিডিউল</a> দেখুন।
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

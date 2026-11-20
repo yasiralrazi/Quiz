@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>সিরাত কুইজ অলিম্পিয়াড</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- ===== হেডার (নেভিগেশন বার) =====
+       বড় স্ক্রিনে মেনু বাইরে, ছোট স্ক্রিনে হ্যামবার্গার বাটনের ভিতরে -->
+  <header class="site-header">
+    <div class="header-in">
+      <a class="logo" href="index.html">
+        <i class="fa-solid fa-moon"></i>
+        <span>সিরাত কুইজ অলিম্পিয়াড</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="মেনু খুলুন" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#about">পরিচিতি</a>
+        <a href="index.html#why">কেন অলিম্পিয়াড</a>
+        <a href="index.html#schedule">শিডিউল</a>
+        <a href="index.html#structure">কাঠামো</a>
+        <a href="index.html#syllabus">সিলেবাস</a>
+        <a href="index.html#prizes">পুরস্কার</a>
+        <a href="index.html#gallery">গ্যালারি</a>
+        <a href="index.html#faq">জিজ্ঞাসা</a>
+        <a href="index.html#contact">যোগাযোগ</a>
+        <a class="btn btn-small" href="login.html">লগইন</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== হিরো ===== -->
+  <section class="hero">
+    <div class="container hero-in">
+      <div>
+        <h1>সিরাত কুইজ অলিম্পিয়াড ২০২৭</h1>
+        <p class="tagline">নবীজির ﷺ জীবনকে জানি, জীবনে মানি</p>
+        <p>
+          রাসূলুল্লাহ ﷺ এর জীবনী (সিরাত) সম্পর্কে সঠিক ও নির্ভরযোগ্য জ্ঞান ছড়িয়ে দিতে
+          আমাদের এই অনলাইন কুইজ প্রতিযোগিতা। ঘরে বসেই অংশ নিন, জানুন এবং পুরস্কার জিতে নিন।
+        </p>
+        <div class="hero-btns">
+          <a class="btn" href="registration.html"><i class="fa-solid fa-user-plus"></i> রেজিস্ট্রেশন</a>
+          <a class="btn btn-outline" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> লগইন</a>
+          <a class="btn btn-outline" href="#schedule"><i class="fa-regular fa-calendar"></i> শিডিউল</a>
+          <a class="btn btn-gold" href="#donate"><i class="fa-regular fa-heart"></i> অনুদান</a>
+        </div>
+      </div>
+
+      <!-- সাধারণ একটি গম্বুজ ও চাঁদের ছবি (SVG) -->
+      <div class="hero-art">
+        <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="মসজিদের গম্বুজ ও চাঁদ">
+          <circle cx="190" cy="52" r="26" fill="#f3cf7a"/>
+          <circle cx="200" cy="46" r="23" fill="#f8fbf2"/>
+          <circle cx="60" cy="40" r="3" fill="#e0a93b"/>
+          <circle cx="110" cy="22" r="2.5" fill="#e0a93b"/>
+          <circle cx="230" cy="100" r="2.5" fill="#e0a93b"/>
+          <rect x="30" y="100" width="22" height="95" rx="4" fill="#bfe0cd"/>
+          <polygon points="30,100 41,74 52,100" fill="#a5d3b9"/>
+          <rect x="208" y="100" width="22" height="95" rx="4" fill="#bfe0cd"/>
+          <polygon points="208,100 219,74 230,100" fill="#a5d3b9"/>
+          <path d="M70 195 L70 140 A60 60 0 0 1 190 140 L190 195 Z" fill="#8fcaa8"/>
+          <rect x="128" y="62" width="4" height="18" fill="#e0a93b"/>
+          <rect x="60" y="195" width="140" height="10" rx="3" fill="#6fb590"/>
+          <path d="M118 195 L118 160 A12 12 0 0 1 142 160 L142 195 Z" fill="#f8fbf2"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== টাইমলাইন (শিডিউল) =====
+       নিচের তারিখগুলো নমুনা, নিজের তারিখ বসান -->
+  <section class="section" id="schedule">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> অলিম্পিয়াড টাইমলাইন</h2>
+      <p class="lead">গুরুত্বপূর্ণ তারিখগুলো দেখে নিন এবং সময়মতো প্রস্তুতি নিন।</p>
+
+      <ul class="timeline">
+        <li>
+          <div class="dot"><i class="fa-solid fa-user-plus"></i></div>
+          <strong>১ ডিসেম্বর ২০২৬</strong>
+          <span>রেজিস্ট্রেশন শুরু</span>
+        </li>
+        <li>
+          <div class="dot"><i class="fa-solid fa-user-check"></i></div>
+          <strong>২০ ডিসেম্বর ২০২৬</strong>
+          <span>রেজিস্ট্রেশন শেষ</span>
+        </li>
+        <li>
+          <div class="dot"><i class="fa-solid fa-file-pen"></i></div>
+          <strong>৫ জানুয়ারি ২০২৭</strong>
+          <span>সিলেকশন রাউন্ড</span>
+        </li>
+        <li>
+          <div class="dot"><i class="fa-solid fa-circle-check"></i></div>
+          <strong>২০ জানুয়ারি ২০২৭</strong>
+          <span>সেমি-ফাইনাল রাউন্ড</span>
+        </li>
+        <li>
+          <div class="dot"><i class="fa-solid fa-trophy"></i></div>
+          <strong>১৫ ফেব্রুয়ারি ২০২৭</strong>
+          <span>ফাইনাল রাউন্ড</span>
+        </li>
+        <li>
+          <div class="dot"><i class="fa-solid fa-award"></i></div>
+          <strong>১ মার্চ ২০২৭</strong>
+          <span>পুরস্কার ঘোষণা</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== আমাদের লক্ষ্য ===== -->
+  <section class="section alt" id="about">
+    <div class="container goal">
+      <!-- ভিডিও লিংক বসাতে href="#" এর জায়গায় ইউটিউব লিংক দিন -->
+      <div class="video-box">
+        <a class="play" href="#" target="_blank" rel="noopener" aria-label="ভিডিও দেখুন">
+          <i class="fa-solid fa-play"></i>
+        </a>
+        <small>পরিচিতি ভিডিও</small>
+      </div>
+
+      <div>
+        <h2><i class="fa-solid fa-star-and-crescent" style="color: var(--gold)"></i> আমাদের লক্ষ্য</h2>
+        <p>
+          সমাজের সর্বস্তরের মানুষের কাছে রাসূলুল্লাহ ﷺ এর জীবনী ও আদর্শ পৌঁছে দেওয়ার লক্ষ্যে
+          আমরা আয়োজন করছি “সিরাত কুইজ অলিম্পিয়াড ২০২৭”। বর্তমান প্রজন্মের কাছে সিরাতকে
+          সহজ, সুশৃঙ্খল ও আকর্ষণীয় উপায়ে উপস্থাপন করাই আমাদের উদ্দেশ্য।
+        </p>
+        <p>
+          এই অলিম্পিয়াডের মাধ্যমে নিয়মিত সিরাত পাঠের অভ্যাস গড়ে উঠবে, নবীজির ﷺ জীবনের
+          ঘটনাগুলো সম্পর্কে সঠিক জ্ঞান বাড়বে এবং তাঁর আদর্শ দৈনন্দিন জীবনে অনুসরণের
+          অনুপ্রেরণা তৈরি হবে, ইন শা আল্লাহ।
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== কেন এই অলিম্পিয়াড ===== -->
+  <section class="section" id="why">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> কেন এই সিরাত অলিম্পিয়াড?</h2>
+      <p class="lead">
+        সিরাতের সঠিক জ্ঞান সবার কাছে পৌঁছে দেওয়া এবং তরুণ প্রজন্মকে নবীজির ﷺ জীবনী পড়তে উৎসাহিত করাই এর মূল লক্ষ্য।
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>১. সিরাত জানা প্রত্যেকের দায়িত্ব</h3>
+          <p>রাসূলুল্লাহ ﷺ এর জীবন আমাদের জন্য সর্বোত্তম আদর্শ। তাঁকে জানা ছাড়া তাঁকে অনুসরণ করা সম্ভব নয়।</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>২. পড়ার অভ্যাস তৈরি</h3>
+          <p>প্রতিযোগিতার প্রস্তুতির মাধ্যমে শিক্ষার্থী ও সাধারণ মানুষের মধ্যে সিরাত পাঠের নিয়মিত অভ্যাস গড়ে ওঠে।</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>৩. সঠিক তথ্যের প্রচার</h3>
+          <p>নির্ভরযোগ্য উৎস থেকে সিরাত শেখা এবং ভুল ও দুর্বল বর্ণনা থেকে নিজেকে বাঁচিয়ে রাখার সুযোগ।</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+          <h3>৪. জ্ঞান থেকে আমল</h3>
+          <p>জ্ঞান শুধু মুখস্থ করার জন্য নয়; নবীজির ﷺ চরিত্র থেকে শিক্ষা নিয়ে নিজের জীবনকে সুন্দর করার প্রেরণা।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== অলিম্পিয়াডের কাঠামো ===== -->
+  <section class="section alt" id="structure">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> অলিম্পিয়াডের কাঠামো</h2>
+      <p class="lead">প্রতিযোগিতাটি চারটি গ্রুপে এবং তিনটি রাউন্ডে অনলাইনে অনুষ্ঠিত হবে।</p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3><i class="fa-solid fa-users"></i> গ্রুপ বিভাজন</h3>
+          <ul class="list">
+            <li><span class="badge">গ্রুপ-ক</span> তৃতীয় থেকে পঞ্চম শ্রেণি (Primary)</li>
+            <li><span class="badge">গ্রুপ-খ</span> ষষ্ঠ থেকে অষ্টম শ্রেণি (Junior)</li>
+            <li><span class="badge">গ্রুপ-গ</span> নবম ও দশম শ্রেণি (Secondary)</li>
+            <li><span class="badge">গ্রুপ-ঘ</span> একাদশ ও দ্বাদশ শ্রেণি (Higher Secondary)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-solid fa-layer-group"></i> রাউন্ডসমূহ</h3>
+          <ul class="list">
+            <li>১. সিলেকশন রাউন্ড <span class="badge">অনলাইন</span></li>
+            <li>২. সেমি-ফাইনাল রাউন্ড <span class="badge">অনলাইন</span></li>
+            <li>৩. ফাইনাল রাউন্ড <span class="badge">অনলাইন</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== সিলেবাস ===== -->
+  <section class="section" id="syllabus">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> সিলেবাসের বিস্তারিত</h2>
+      <p class="lead">নিজের গ্রুপের সিলেবাস দেখে প্রস্তুতি শুরু করুন।</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>গ্রুপ</th>
+              <th>বিষয়বস্তু</th>
+              <th>প্রশ্নসংখ্যা</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>গ্রুপ-ক</td>
+              <td>নবীজির ﷺ জন্ম, শৈশব, পরিবার ও চরিত্র</td>
+              <td>৫০ টি</td>
+            </tr>
+            <tr>
+              <td>গ্রুপ-খ</td>
+              <td>নবুওয়াত লাভ, মক্কি জীবন ও হিজরত</td>
+              <td>৫০ টি</td>
+            </tr>
+            <tr>
+              <td>গ্রুপ-গ</td>
+              <td>মাদানি জীবন, বদর, উহুদ, খন্দক ও হুদাইবিয়া</td>
+              <td>৫০ টি</td>
+            </tr>
+            <tr>
+              <td>গ্রুপ-ঘ</td>
+              <td>পূর্ণাঙ্গ সিরাত, সাহাবিদের জীবনী ও বিদায় হজ</td>
+              <td>৫০ টি</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="syllabus-grid">
+        <!-- ক্লিক করলে খুলবে (details ট্যাগ) -->
+        <div>
+          <details>
+            <summary>সেমি-ফাইনাল রাউন্ড: গ্রুপ-ক</summary>
+            <ul>
+              <li>নবীজির ﷺ বংশ পরিচয়</li>
+              <li>জন্ম ও দুধপান কাল</li>
+              <li>শৈশবের গুরুত্বপূর্ণ ঘটনা</li>
+            </ul>
+          </details>
+          <details>
+            <summary>সেমি-ফাইনাল রাউন্ড: গ্রুপ-খ</summary>
+            <ul>
+              <li>ওহীর সূচনা ও প্রথম ইসলাম গ্রহণকারীগণ</li>
+              <li>মক্কার কঠিন দিনগুলো</li>
+              <li>হিজরতের ঘটনা</li>
+            </ul>
+          </details>
+          <details>
+            <summary>সেমি-ফাইনাল রাউন্ড: গ্রুপ-গ</summary>
+            <ul>
+              <li>মদিনার সমাজ ও মসজিদে নববী</li>
+              <li>বদর ও উহুদের যুদ্ধ</li>
+              <li>খন্দক যুদ্ধ ও হুদাইবিয়ার সন্ধি</li>
+            </ul>
+          </details>
+          <details>
+            <summary>সেমি-ফাইনাল রাউন্ড: গ্রুপ-ঘ</summary>
+            <ul>
+              <li>মক্কা বিজয়</li>
+              <li>বিদায় হজ ও শেষ জীবন</li>
+              <li>আশারায়ে মুবাশশারার পরিচয়</li>
+            </ul>
+          </details>
+          <details>
+            <summary>ফাইনাল রাউন্ড: সব গ্রুপ</summary>
+            <ul>
+              <li>নিজ নিজ গ্রুপের পূর্ণ সিলেবাস থেকে প্রশ্ন আসবে</li>
+              <li>সময়ভিত্তিক প্রশ্নোত্তর পর্ব</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="card side-box">
+          <h3><i class="fa-solid fa-file-arrow-down" style="color: var(--gold)"></i> সিলেবাস ডাউনলোড</h3>
+          <div class="dl-links">
+            <a class="btn btn-outline btn-small" href="#">গ্রুপ-ক সিলেবাস</a>
+            <a class="btn btn-outline btn-small" href="#">গ্রুপ-খ সিলেবাস</a>
+            <a class="btn btn-outline btn-small" href="#">গ্রুপ-গ সিলেবাস</a>
+            <a class="btn btn-outline btn-small" href="#">গ্রুপ-ঘ সিলেবাস</a>
+          </div>
+          <p><strong>নোট:</strong> পরীক্ষার সময় শুধু বহুনির্বাচনী প্রশ্ন (MCQ) থাকবে।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== পুরস্কার (টাকার অংক নমুনা, নিজেরটা বসান) ===== -->
+  <section class="section alt" id="prizes">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> পুরস্কারের বিবরণ</h2>
+      <p class="lead">প্রতিটি গ্রুপের জন্য আলাদা পুরস্কার। বিজয়ীরা পাবেন সার্টিফিকেট, ক্রেস্ট ও বই।</p>
+
+      <div class="prizes">
+        <div class="prize first">
+          <i class="fa-solid fa-trophy"></i>
+          <h3>চ্যাম্পিয়ন</h3>
+          <div class="amount">২০,০০০ টাকা</div>
+          <p>ক্রেস্ট ও সার্টিফিকেট</p>
+        </div>
+        <div class="prize">
+          <i class="fa-solid fa-medal"></i>
+          <h3>ফার্স্ট রানার আপ</h3>
+          <div class="amount">১০,০০০ টাকা</div>
+          <p>ক্রেস্ট ও সার্টিফিকেট</p>
+        </div>
+        <div class="prize">
+          <i class="fa-solid fa-medal"></i>
+          <h3>সেকেন্ড রানার আপ</h3>
+          <div class="amount">৫,০০০ টাকা</div>
+          <p>ক্রেস্ট ও সার্টিফিকেট</p>
+        </div>
+        <div class="prize">
+          <i class="fa-solid fa-award"></i>
+          <h3>৪র্থ পুরস্কার</h3>
+          <div class="amount">৩,০০০ টাকা</div>
+          <p>বই ও সার্টিফিকেট</p>
+        </div>
+        <div class="prize">
+          <i class="fa-solid fa-award"></i>
+          <h3>৫ম পুরস্কার</h3>
+          <div class="amount">২,০০০ টাকা</div>
+          <p>বই ও সার্টিফিকেট</p>
+        </div>
+        <div class="prize">
+          <i class="fa-solid fa-gift"></i>
+          <h3>৬ষ্ঠ থেকে ১০ম</h3>
+          <div class="amount">প্রত্যেকে ১,০০০ টাকা</div>
+          <p>বই ও সার্টিফিকেট</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== অনুদান ===== -->
+  <section class="donate" id="donate">
+    <div class="container">
+      <h2><i class="fa-regular fa-handshake"></i> ডোনেশন (অনুদান)</h2>
+      <p>সিরাত কুইজ অলিম্পিয়াডে শুধু প্রতিযোগী হিসেবে নয়, শুভাকাঙ্ক্ষী ও অনুদানকারী হিসেবেও অংশ নেওয়ার সুযোগ রয়েছে।</p>
+      <a class="btn btn-gold" href="#contact">Donate Now</a>
+    </div>
+  </section>
+
+  <!-- ===== গ্যালারি =====
+       আসল ছবি দিতে: <div class="photo">...</div> এর জায়গায়
+       <img src="images/photo1.jpg" alt="ছবির বিবরণ"> লিখুন -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> গ্যালারি</h2>
+      <p class="lead">আমাদের আয়োজনের কিছু মুহূর্ত।</p>
+
+      <div class="gallery">
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+        <div class="photo"><i class="fa-regular fa-image"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== মন্তব্য (নমুনা লেখা, নিজের মন্তব্য বসান) ===== -->
+  <section class="section alt">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> অংশগ্রহণকারীদের মতামত</h2>
+      <p class="lead">প্রতিযোগী ও অভিভাবকদের অনুভূতি।</p>
+
+      <div class="quotes">
+        <div class="quote">
+          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <p>“সিরাত নিয়ে এমন সুন্দর উদ্যোগ আগে দেখিনি। প্রস্তুতি নিতে গিয়ে নবীজির ﷺ জীবন সম্পর্কে অনেক কিছু জানলাম।”</p>
+          <strong>একজন প্রতিযোগী</strong>
+        </div>
+        <div class="quote">
+          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <p>“আমার সন্তান নিয়মিত সিরাত পড়ছে, এটাই সবচেয়ে বড় প্রাপ্তি। এমন আয়োজন চলতে থাকুক।”</p>
+          <strong>একজন অভিভাবক</strong>
+        </div>
+        <div class="quote">
+          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <p>“শিক্ষার্থীদের মাঝে সিরাতচর্চা ছড়িয়ে দেওয়ার জন্য এটি একটি প্রশংসনীয় প্রচেষ্টা।”</p>
+          <strong>একজন শিক্ষক</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== সাধারণ জিজ্ঞাসা (FAQ) ===== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="title"><i class="fa-solid fa-star-and-crescent"></i> সাধারণ জিজ্ঞাসা (FAQ)</h2>
+      <p class="lead">প্রায়ই যেসব প্রশ্ন করা হয়।</p>
+
+      <div class="faq">
+        <details>
+          <summary>১. কীভাবে অংশগ্রহণ করব?</summary>
+          <div>“রেজিস্ট্রেশন” বাটনে ক্লিক করে ফর্ম পূরণ করুন। এরপর লগইন করে নির্ধারিত সময়ে পরীক্ষায় অংশ নিন।</div>
+        </details>
+        <details>
+          <summary>২. কোন কোন বই পড়তে হবে?</summary>
+          <div>প্রতিটি গ্রুপের সিলেবাসে নির্ধারিত বইয়ের তালিকা দেওয়া থাকবে। সিলেবাস অংশ থেকে ডাউনলোড করুন।</div>
+        </details>
+        <details>
+          <summary>৩. রেজিস্ট্রেশন ফি আছে কিনা?</summary>
+          <div>এখানে আপনার রেজিস্ট্রেশন ফি সংক্রান্ত তথ্য লিখুন।</div>
+        </details>
+        <details>
+          <summary>৪. মেয়েদের পরীক্ষা কীভাবে হবে?</summary>
+          <div>পরীক্ষা অনলাইনে হবে, তাই ছেলে-মেয়ে সবাই নিজ নিজ বাড়ি থেকে অংশ নিতে পারবে।</div>
+        </details>
+        <details>
+          <summary>৫. কোথায় পরীক্ষা হবে?</summary>
+          <div>সব রাউন্ড অনলাইনে হবে। লগইন করে নির্ধারিত সময়ে পরীক্ষা শুরু করতে হবে।</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== যোগাযোগ ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2><i class="fa-regular fa-envelope"></i> অলিম্পিয়াড সম্পর্কিত জিজ্ঞাসা</h2>
+      <p>অলিম্পিয়াড সম্পর্কে যেকোনো প্রশ্ন, ওয়েবসাইট সংক্রান্ত মতামত বা সমস্যার কথা আমাদের জানান।</p>
+      <a class="btn" href="mailto:support@example.com">যোগাযোগ</a>
+    </div>
+  </section>
+
+  <!-- ===== ফুটার ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div>© ২০২৬ সিরাত কুইজ অলিম্পিয়াড। সর্বস্বত্ব সংরক্ষিত।</div>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-facebook"></i> ফেসবুক</a>
+        <a href="#"><i class="fa-brands fa-youtube"></i> ইউটিউব</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> ইন্সটাগ্রাম</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

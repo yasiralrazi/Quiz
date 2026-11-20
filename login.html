@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>লগইন - সিরাত কুইজ অলিম্পিয়াড</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/auth.css">
+</head>
+<body>
+
+  <!-- হেডার (হোম পেজের মতোই) -->
+  <header class="site-header">
+    <div class="header-in">
+      <a class="logo" href="index.html">
+        <i class="fa-solid fa-moon"></i>
+        <span>সিরাত কুইজ অলিম্পিয়াড</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="মেনু খুলুন" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#about">পরিচিতি</a>
+        <a href="index.html#why">কেন অলিম্পিয়াড</a>
+        <a href="index.html#schedule">শিডিউল</a>
+        <a href="index.html#structure">কাঠামো</a>
+        <a href="index.html#syllabus">সিলেবাস</a>
+        <a href="index.html#prizes">পুরস্কার</a>
+        <a href="index.html#gallery">গ্যালারি</a>
+        <a href="index.html#faq">জিজ্ঞাসা</a>
+        <a href="index.html#contact">যোগাযোগ</a>
+        <a class="btn btn-small" href="registration.html">রেজিস্ট্রেশন</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card" id="card">
+
+      <!-- ===== লগইন অংশ ===== -->
+      <section id="loginView">
+        <h1>লগইন</h1>
+        <p class="sub">মোবাইল নম্বর, ইমেইল অথবা ক্যান্ডিডেট আইডি দিয়ে প্রবেশ করুন।</p>
+
+        <form id="loginForm" novalidate>
+          <div class="alert" id="alert" role="alert"></div>
+
+          <!-- দুইটা ট্যাব: Mobile/Email অথবা Candidate ID -->
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab on" data-mode="contact" role="tab" aria-selected="true">Mobile / Email</button>
+            <button type="button" class="tab" data-mode="cid" role="tab" aria-selected="false">Candidate ID</button>
+          </div>
+
+          <div>
+            <label for="userId" id="idLabel">Mobile / Email <span class="req">*</span></label>
+            <input id="userId" placeholder="01XXXXXXXXX বা email@example.com" autocomplete="username">
+            <div class="hint warn" id="idHint" hidden>ক্যান্ডিডেট আইডি আপনার রেজিস্ট্রেশন নিশ্চিতকরণ বার্তায় দেওয়া আছে।</div>
+            <div class="err" id="userIdErr"></div>
+          </div>
+
+          <div>
+            <label for="password">Password <span class="req">*</span></label>
+            <div class="pw">
+              <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+              <button type="button" id="eyeBtn" aria-label="পাসওয়ার্ড দেখুন"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="hint warn" id="capsHint" hidden>Caps Lock চালু আছে</div>
+            <div class="err" id="passwordErr"></div>
+          </div>
+
+          <div class="row">
+            <label class="check" for="remember">
+              <input type="checkbox" id="remember">
+              আমাকে মনে রাখুন
+            </label>
+            <a href="#" id="forgotLink">পাসওয়ার্ড ভুলে গেছেন?</a>
+          </div>
+
+          <button class="btn" id="loginBtn" type="submit">Log in</button>
+        </form>
+
+        <p class="foot">Don't have an account? <a href="registration.html">Register</a></p>
+      </section>
+
+      <!-- ===== পাসওয়ার্ড রিসেট অংশ ===== -->
+      <section id="resetView" hidden>
+        <h1>পাসওয়ার্ড রিসেট</h1>
+        <p class="sub">আপনার মোবাইল বা ইমেইল দিন। রেজিস্ট্রেশনের সময় দেওয়া ইমেইলে ৬ সংখ্যার কোড পাঠানো হবে।</p>
+
+        <form id="resetForm" novalidate>
+          <div class="alert" id="resetAlert" role="status"></div>
+
+          <div>
+            <label for="resetId">Mobile / Email <span class="req">*</span></label>
+            <input id="resetId" placeholder="01XXXXXXXXX বা email@example.com">
+            <div class="err" id="resetIdErr"></div>
+          </div>
+
+          <button class="btn" id="resetBtn" type="submit">Send reset code</button>
+        </form>
+
+        <!-- ধাপ ২: কোড ও নতুন পাসওয়ার্ড (কোড পাঠানোর পর এটা দেখা যাবে) -->
+        <form id="resetForm2" novalidate hidden>
+          <div class="alert" id="resetAlert2" role="status"></div>
+
+          <div>
+            <label for="resetCode">রিসেট কোড (৬ সংখ্যা) <span class="req">*</span></label>
+            <input id="resetCode" inputmode="numeric" maxlength="6" placeholder="123456" autocomplete="one-time-code">
+            <div class="err" id="resetCodeErr"></div>
+          </div>
+
+          <div>
+            <label for="newPw">New Password <span class="req">*</span></label>
+            <input id="newPw" type="password" placeholder="New Password" autocomplete="new-password">
+            <div class="hint">অন্তত ৮ অক্ষর, বড়-ছোট হাতের অক্ষর ও সংখ্যা দিন</div>
+            <div class="err" id="newPwErr"></div>
+          </div>
+
+          <div>
+            <label for="newPw2">Confirm New Password <span class="req">*</span></label>
+            <input id="newPw2" type="password" placeholder="Confirm New Password" autocomplete="new-password">
+            <div class="err" id="newPw2Err"></div>
+          </div>
+
+          <button class="btn" id="resetBtn2" type="submit">Change password</button>
+          <p class="foot" style="margin:0"><a href="#" id="againLink">কোড পাননি? আবার পাঠান</a></p>
+        </form>
+
+        <p class="foot"><a href="#" id="backLink">← লগইনে ফিরে যান</a></p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
